@@ -18,7 +18,7 @@ public class NowServlet extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String date = new Date().toString();
 		
-		String html = "<html><body><h1>" + date + "</h1></body></html>";
+		String html = "<html><body><h1> Current Time: " + date + "</h1></body></html>";
 		
 		resp.setContentType("text/html;charset=UTF-8");
 		resp.getWriter().print(html);
