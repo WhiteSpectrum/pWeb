@@ -16,11 +16,14 @@ public class NowServlet extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String date = new Date().toString();
+		//Processamento do back-and
 		
-		String html = "<html><body><h1> Current Time: " + date + "</h1></body></html>";
+		Date data = new Date();
 		
-		resp.setContentType("text/html;charset=UTF-8");
-		resp.getWriter().print(html);
+		//Armazenar valores necessarios para jsp
+		
+		req.setAttribute("datahora", data);
+		
+		req.getRequestDispatcher("dataHoraCerta.jsp").forward(req, resp);
 	}
 }
